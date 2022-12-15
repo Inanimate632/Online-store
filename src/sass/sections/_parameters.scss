@@ -1,0 +1,137 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+@import "../components/view";
+@import "../base/typography";
+@import "../abstracts/mixins";
+@import "../components/view";
+
+.products {
+  width: 73%;
+}
+
+.parameters {
+  margin: 10px 0 50px;
+  //background-color: antiquewhite;
+  @include flex(flex, space-between, center);
+
+  .found {
+    font-size: 18px;
+    color: $color-gray;
+  }
+}
+
+.group {
+  @include flex(flex, center, center);
+
+  .sort {
+    position: relative;
+    margin-right: 30px;
+    cursor: pointer;
+
+    .sort__main {
+      @include flex(flex, space-between, center);
+      padding: 3px 15px;
+      width: 200px;
+      color: $color-gray;
+      background-color: $color-track;
+      border-radius: 20px;
+
+      .sort__arrow {
+        display: block;
+        width: 40px;
+        font-size: 10px;
+      }
+
+      &:hover {
+        color: $color-black;
+      }
+    }
+
+    .sort__main_active {
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    .sort__list {
+      position: absolute;
+      top: 22px;
+      left: 0;
+      padding: 10px 15px;
+      display: none;
+      width: 200px;
+      font-size: 15px;
+      background: rgba($color: $color-track, $alpha: 0.5);
+      border-radius: 0px 0px 20px 20px;
+
+      .sort__item {
+        margin-bottom: 10px;
+        @include flex(flex, flex-start, center);
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        .sort__check {
+          display: none;
+          font-size: 11px;
+          margin-right: 10px;
+        }
+
+        .sort__check_active {
+          display: block;
+        }
+      }
+
+      .sort__item_active {
+        &:hover {
+          text-decoration: none;
+          cursor: auto;
+        }
+      }
+
+      
+    }
+  }
+
+  .view {
+    @include flex(flex, center, center);
+
+    .view__mode {
+      @include flex(flex, center, center);
+      flex-wrap: wrap;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .view__mode_triple {
+      @include rectangle(18px, 18px);
+
+      &:hover .view__triple {
+        background: $color-black;
+        @include transition(0.4s);
+      }
+
+      .view__triple {
+        @extend %view-item;
+        @include transition(0.4s);
+      }
+    }
+
+    .view__mode_double {
+      justify-content: space-around;
+      @include rectangle(20px, 20px);
+
+      &:hover .view__double {
+        background: $color-black;
+        @include transition(0.4s);
+      }
+
+      .view__double {
+        @extend %view-item;
+        @include transition(0.4s);
+        margin: 0 1px;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+}

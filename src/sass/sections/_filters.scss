@@ -1,0 +1,144 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+@import "../components/buttons";
+
+.store {
+  padding: 50px 0;
+  @include flex(flex, space-between, flex-start);
+}
+
+.filters {
+  width: 280px;
+}
+
+.category,
+.brand,
+.price,
+.stock,
+.button {
+  margin-bottom: 30px;
+}
+
+.fieldset {
+  border-radius: 10px;
+
+  .fieldset__title {
+    font-family: $font-logo;
+    font-size: 21px;
+  }
+
+  .fieldset__items {
+    margin-top: 10px;
+    padding-right: 7px;
+    height: 100px;
+    overflow-y: scroll;
+    font-size: 15px;
+    color: $color-darkgray;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1px rgba($color: $color-black, $alpha: 0.2);
+      border-radius: 10px;
+      background: $color-track; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: $color-trumb; 
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $color-darktrumb; 
+    }
+
+    .fieldset__item {
+      margin-bottom: 3px;
+      @include flex(flex, space-between, flex-start);
+
+      .fieldset__wrap {
+        @include flex(flex, space-between, flex-start);
+
+        .fieldset__label {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .fieldset__item_active {
+      color: $color-black;
+    }
+  }
+
+  .fieldset__items_nonactive {
+    color: $color-gray;
+  }
+}
+
+.fieldset__block {
+  .num-range {
+    margin-top: 10px;
+    @include flex(flex, space-around, center);
+  
+  
+    .num-range__item {
+      display: inline-block;
+      width: 70px;
+      text-align: center;
+  
+      &:nth-child(2) {
+        width: 20px;
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 20px;
+
+    .slider__line {
+      position: relative;
+      margin: 0 auto;
+      width: 90%;
+      height: 2px;
+      background: $color-trumb;
+      border-radius: 100px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -5px;
+        width: 15px;
+        height: 15px;
+        background: $color-darktrumb;
+        border-radius: 100px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: -6px;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        background: $color-darktrumb;
+        border-radius: 100px;
+      }
+    }
+
+    .slider__range {
+      margin-top: 10px;
+      @include flex(flex, space-between, flex-start);
+    }
+  }
+}
+
+.button {
+  @include flex(flex, space-around, center);
+
+  .button__item {
+    @extend %btn;
+  }
+}
