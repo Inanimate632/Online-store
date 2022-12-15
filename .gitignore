@@ -105,3 +105,5 @@ dist
 
 #.vscode directory
 .vscode
+
+.DS_Store
