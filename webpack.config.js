@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  entry: './src/main',
+  entry: './src/main.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'
@@ -18,18 +18,11 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       { 
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.(js)$/,
@@ -50,19 +43,19 @@ module.exports = {
     ]
   },
   resolve: {
-      extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js']
   },
   plugins: [
-      new HtmlWebPackPlugin({
-          template: './src/index.html',
-          filename: './index.html'
-      }),
-      new MiniCssExtractPlugin({
-          filename: '[name].css',
-          chunkFilename: '[id].css',
-      }),
-      new CleanWebpackPlugin(),
-      new EslingPlugin({ extensions: 'ts' })
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      filename: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+    new CleanWebpackPlugin(),
+    new EslingPlugin({ extensions: 'ts' })
   ],
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
 }

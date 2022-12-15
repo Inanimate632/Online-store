@@ -1,0 +1,130 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+
+.header {
+  padding: 20px 0;
+  background: rgba($color: $color-lightsky, $alpha: 0.6);
+  box-shadow: 0px 0px 20px rgba($color: $color-lightsky, $alpha: 0.5);
+}
+
+.nav {
+  @include flex(flex, space-between, center);
+}
+
+.logo{
+  display: flex;
+  align-items: flex-end;
+  font-family: $font-logo;
+  font-size: 20px;
+  line-height: 1em;
+  color: black;
+
+  .logo__img {
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo__text {
+    margin-bottom: -1px;
+    font-weight: 500;
+    font-size: 22px;
+    color: $color-black;
+    @include transition(0.5s);
+
+    &:hover {
+      color: $color-lightpink;
+      @include transition(0.4s);
+    }
+  }
+}
+
+.search {
+  position: relative;
+
+  &:hover .search__icon {
+    color: $color-darkgray;
+    @include transition(0.5s);
+  }
+
+  &:hover .search__input {
+    color: $color-darkgray;
+    border: 1px solid $color-darkgray;
+    @include transition(0.5s);
+  }
+
+  &:hover .search__input:hover::placeholder {
+    color: $color-darkgray;
+    @include transition(0.5s);
+  }
+
+  .search__icon {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 15px;
+    color: $color-gray;
+    @include transition(0.5s);
+  }
+
+  .search__input {
+    padding: 6px 33px 6px 33px;
+    width: 400px;
+    font-family: $font-main;
+    font-size: 16px;
+    color: $color-gray;
+    border: 1px solid $color-gray;
+    border-radius: 20px;
+    @include transition(0.5s);
+
+    &:focus {
+      outline: none;
+      color: $color-darkgray;
+      border: 1px solid $color-darkgray;
+      @include transition(0.5s);
+    }
+
+    &::placeholder {
+      font-family: $font-main;
+      font-size: 16px;
+      color: $color-gray;
+      @include transition(0.5s);
+    }
+
+    &:focus::placeholder {
+      color: $color-darkgray;
+      @include transition(0.5s);
+    }
+  }
+
+  .search__icon-close {
+    position: absolute;
+    top: 9px;
+    right: 14px;
+    font-size: 15px;
+    color: $color-gray;
+    cursor: pointer;
+  }
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+
+  .cart__sum {
+    font-size: 18px;
+    color: $color-darkgray;
+  }
+
+  .cart__icon {
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    @include transition(0.5s);
+
+    &:hover {
+      color: $color-lightpink;
+      @include transition(0.4s);
+    }
+  }
+}
