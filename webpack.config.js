@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: './src/main',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'
