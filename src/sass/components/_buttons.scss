@@ -8,22 +8,15 @@
   font-size: 20px;
   line-height: 1em;
   text-align: center;
-  border: 1px solid $color-lightgray;
   border-radius: 5px;
-  color: $color-darktrumb;
-  background: $color-lightgray;
   cursor: pointer;
   @include transition(0.5s);
 
   &:hover {
-    border: 1px solid $color-darktrumb;
-    color: $color-lightgray;
-    background: $color-darktrumb;
     @include transition(0.5s);
   }
 
   &:active {
-    box-shadow: 0 0 10px rgba($color: $color-darktrumb, $alpha: 0.7);
     @include transition(0s);
   }
 }
@@ -32,9 +25,7 @@
 /*
 
 FOR CARD BUTTONS
-  color: $color-white;
-  background: $color-sky;
+  
 
-color: $color-sky;
-    background: $color-white;
+
 */

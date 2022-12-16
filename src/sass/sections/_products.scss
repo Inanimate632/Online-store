@@ -1,0 +1,135 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+@import "../components/buttons";
+
+.cards {
+  @include flex(flex, space-between, flex-start);
+  flex-wrap: wrap;
+}
+
+.cards__item {
+  margin-bottom: 40px;
+  width: 250px;
+  overflow:hidden;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid $color-lightgray;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $color-sky;
+    box-shadow: 0 0 5px rgba($color: $color-lightsky, $alpha: 1);
+  }
+
+  .cards__wrap {
+    position: relative;
+    height: 200px;
+    
+    .cards__discount {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      padding: 3px 6px;
+      font-size: 14px;
+      color: $color-lightpink;
+      background: white;
+      box-shadow: 2px 2px 5px rgba($color: $color-lightpink, $alpha: 0.7);
+      border-radius: 10px;
+    }
+  }
+
+  .cards__text {
+    padding: 10px 15px 20px;
+
+    .cards__title {
+      margin-bottom: 10px;
+      @include flex(flex, center,center);
+      height: 60px;
+      font-size: 20px;
+    }
+
+    .cards__rating {
+      @include flex(flex, center, center);
+
+      .cards__ratenum {
+        margin-left: 7px;
+        font-size: 14px;
+      }
+    }
+
+    .cards__price {
+      margin: 10px 0 15px;
+      font-size: 22px;
+    }
+
+    .cards__btn {
+      @extend %btn;
+      width: 180px;
+      font-family: $font-main;
+      border: 1px solid $color-lightgray;
+      color: $color-darktrumb;
+      background: $color-lightgray;
+
+      &:hover {
+        color: $color-sky;
+        background: $color-white;
+        border: 1px solid $color-sky;
+      }
+
+      &:active {
+        box-shadow: 0 0 5px rgba($color: $color-lightsky, $alpha: 1);
+      }
+    }
+  }
+}
+
+.cards__item_active {
+  border: 1px solid $color-sky;
+  box-shadow: 0 0 5px rgba($color: $color-lightsky, $alpha: 1);
+
+  //DON'T WORKING  -> менять стили через ts
+  .cards__btn_active {
+    color: $color-sky;
+    background: $color-white;
+    border: 1px solid $color-sky;
+  
+    &:hover {
+      color: $color-white;
+      background: $color-sky;
+    }
+  }
+}
+
+.cards-double {
+  .cards__item {
+    width: 400px;
+
+    .cards__wrap {
+      height: 350px;
+    }
+
+    .cards__title {
+      height: 35px;
+    }
+  }
+}
+
+
+
+#cards__item1 {
+  .cards__wrap {
+    background: url('https://i.dummyjson.com/data/products/1/thumbnail.jpg') no-repeat center center / cover;
+  }
+}
+
+#cards__item2 {
+  .cards__wrap {
+    background: url('https://i.dummyjson.com/data/products/2/thumbnail.jpg') no-repeat center center / cover;
+  }
+}
+
+#cards__item3 {
+  .cards__wrap {
+    background: url('https://i.dummyjson.com/data/products/3/thumbnail.jpg') no-repeat center center / cover;
+  }
+}
