@@ -140,5 +140,18 @@
 
   .button__item {
     @extend %btn;
+    border: 1px solid $color-lightgray;
+    color: $color-darktrumb;
+    background: $color-lightgray;
+
+    &:hover {
+      border: 1px solid $color-darktrumb;
+      color: $color-lightgray;
+      background: $color-darktrumb;
+    }
+  
+    &:active {
+      box-shadow: 0 0 10px rgba($color: $color-darktrumb, $alpha: 0.7);
+    }
   }
 }
