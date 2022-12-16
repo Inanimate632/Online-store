@@ -8,6 +8,7 @@
 }
 
 .cards__item {
+  margin-bottom: 40px;
   width: 250px;
   overflow:hidden;
   border-radius: 20px;
@@ -95,6 +96,20 @@
     &:hover {
       color: $color-white;
       background: $color-sky;
+    }
+  }
+}
+
+.cards-double {
+  .cards__item {
+    width: 400px;
+
+    .cards__wrap {
+      height: 350px;
+    }
+
+    .cards__title {
+      height: 35px;
     }
   }
 }
