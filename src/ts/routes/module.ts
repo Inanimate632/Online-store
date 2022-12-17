@@ -21,6 +21,6 @@ export class Module {
 
     (
       document.querySelector('router-outlet') as HTMLElement
-    ).innerHTML = `<${route.component.selector}>${route.component.template}<${route.component.selector}>`;
+    ).innerHTML = `<${route.component.selector}>${route.component.template}</${route.component.selector}>`;
   }
 }
