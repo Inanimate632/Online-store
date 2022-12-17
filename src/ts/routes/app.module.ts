@@ -1,6 +1,6 @@
 import { Module } from './module';
 import { appRoutes } from './app.routes';
-import { config, routes } from './Intarface';
+import { config, routes } from '../Intarface/IntarfaceRoutes';
 
 class appModules extends Module {
   constructor(config: config) {

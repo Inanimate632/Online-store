@@ -1,12 +1,4 @@
-// import { Module } from "../ts/routes/module";
-
-// class basketComponent extends Module {
-//   constructor(config){
-//     super(config)
-//   }
-// }
-
-import { component } from '../ts/routes/Intarface';
+import { component } from '../ts/Intarface/IntarfaceRoutes';
 
 export const basketPageComponent: component = {
   selector: 'app-basket-page',

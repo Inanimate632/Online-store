@@ -1,5 +1,5 @@
-import { router } from './routers';
-import { config, routes, routesObj } from './Intarface';
+import { router } from './router';
+import { config, routes, routesObj } from '../Intarface/IntarfaceRoutes';
 
 export class Module {
   routes: routes;
