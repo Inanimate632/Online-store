@@ -1,0 +1,87 @@
+@import "../components/buttons";
+@import "../abstracts/mixins";
+@import "../base/typography";
+
+.basket {
+  margin-top: 30px;
+  min-height: 74.5vh;
+  @include flex(flex, flex-start, flex-start);
+  gap: 4rem;
+}
+
+.product {
+  width: 67%;
+  background-color: $color-lightsky;
+  border-radius: 15px;
+  padding-left: 10px;
+}
+
+.product__control {
+  @include flex(flex, flex-start, center);
+  gap: 3rem;
+}
+
+.product__control-title {
+  padding-right: 350px;
+}
+
+.product__control_items,
+.product__control_page {
+  @include flex(flex, center, center);
+  gap: 5px;
+}
+
+.sum {
+  border: 3px solid $color-sky;
+  border-radius: 15px;
+  width: 29%;
+}
+
+.sum-title {
+  text-align: center;
+  background-color: $color-lightsky;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 130%;
+  border-bottom: 3px solid $color-sky;
+}
+
+.sum__products,
+.sum__price {
+  @include flex(flex, center, center);
+  margin: 15px auto 0 auto;
+  gap: 0.2rem;
+}
+
+.products-title,
+.products-amount,
+.price-title,
+.price-amount {
+  font-size: 130%;
+}
+
+.promo__wraper {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  @include flex(flex, center, center);
+}
+
+.promo {
+  width: 70%;
+  height: 25px;
+  border: 2px solid $color-sky;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.promo-test {
+  text-align: center;
+  font-size: 80%;
+}
+
+.buy {
+  @extend %btn;
+  display: block;
+  margin: 15px auto 15px auto;
+  border-color: $color-sky;
+}
