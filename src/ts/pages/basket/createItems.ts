@@ -3,7 +3,7 @@ import { toPrice } from '../../helpers/helper';
 const massPages: HTMLElement[] = [];
 
 export function createItems(id: number, index: number): void {
-  const product = document.querySelector('.product') as HTMLElement;
+  const product = document.querySelector('app-cart-items') as HTMLElement;
   const itemWraper = document.createElement('div');
   itemWraper.classList.add('product__item');
   const numElement = document.createElement('p');

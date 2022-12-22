@@ -17,6 +17,7 @@ export const basketPageComponent: component = {
         <button class="control_page-btn"> > </button>
       </div>
     </div>
+    <app-cart-items></app-cart-items>
   </div>
   <div class="sum">
     <h2 class="sum-title">Summary</h2>

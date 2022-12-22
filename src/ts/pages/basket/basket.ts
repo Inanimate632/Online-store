@@ -1,7 +1,8 @@
 import { createItems } from './createItems';
+import { addRoutes } from './createRoute';
 window.addEventListener('load', create);
 window.addEventListener('hashchange', create);
-const arrayProduct: number[] = [0, 2, 12, 5, 10, 4, 6, 1]; // масив с local storage
+const arrayProduct: number[] = [0, 2, 12, 5]; // масив с local storage
 
 function create() {
   const basket = document.querySelector('.basket');
@@ -10,5 +11,6 @@ function create() {
     arrayProduct.forEach((item, index) => {
       createItems(item, index);
     });
+    addRoutes();
   }
 }

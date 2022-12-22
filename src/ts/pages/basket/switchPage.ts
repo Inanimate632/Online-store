@@ -4,14 +4,12 @@ window.addEventListener('load', take);
 window.addEventListener('hashchange', take);
 
 function take() {
-  if (window.location.hash === '#basket') {
-    const swtitchBtn = document.querySelectorAll('.control_page-btn');
-    swtitchBtn.forEach((item) => {
-      item.addEventListener('click', () => {
-        switchPage(item.textContent || '{}');
-      });
+  const swtitchBtn = document.querySelectorAll('.control_page-btn');
+  swtitchBtn.forEach((item) => {
+    item.addEventListener('click', () => {
+      switchPage(item.textContent || '{}');
     });
-  }
+  });
 }
 
 function switchPage(btnContent: string) {
@@ -23,7 +21,5 @@ function switchPage(btnContent: string) {
   } else if (btnContent === ' < ' && a > 1) {
     a--;
   }
-  console.log(a);
-  pageNum.textContent = a.toString();
   switchHash(a);
 }
