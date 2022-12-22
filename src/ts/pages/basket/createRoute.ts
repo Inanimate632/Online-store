@@ -1,6 +1,7 @@
 import massPages from './createItems';
 import { component, routesObj } from '../../Intarface/IntarfaceRoutes';
 import { appRoutes } from '../../routes/app.routes';
+import { fillSummary } from './getSummary';
 
 export function addRoutes() {
   let a = 1;
@@ -21,8 +22,8 @@ function creteComponent(num: number) {
   const pageValue = page.querySelector('.control_page-value') as HTMLElement;
   pageValue.textContent = num.toString();
   wraper.innerHTML = '';
+  fillSummary(page);
   for (let i = (num - 1) * 3; i < num * 3; i++) {
-    console.log(massPages[i]);
     if (massPages[i] !== undefined) {
       wraper.append(massPages[i]);
     }
