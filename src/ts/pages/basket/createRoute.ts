@@ -17,12 +17,16 @@ export function addRoutes() {
 }
 
 function creteComponent(num: number) {
-  const page = document.querySelector('app-basket-page') as HTMLElement;
+  let page = document.querySelector('app-basket-page') as HTMLElement;
+  if (page === null) {
+    page = document.querySelector('app-basket-page1') as HTMLElement;
+  } else {
+    fillSummary(page);
+  }
   const wraper = page.querySelector('app-cart-items') as HTMLElement;
   const pageValue = page.querySelector('.control_page-value') as HTMLElement;
   pageValue.textContent = num.toString();
   wraper.innerHTML = '';
-  fillSummary(page);
   for (let i = (num - 1) * 3; i < num * 3; i++) {
     if (massPages[i] !== undefined) {
       wraper.append(massPages[i]);
