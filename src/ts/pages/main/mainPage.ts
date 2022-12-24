@@ -2,6 +2,7 @@ import { createItems } from './createItems';
 import products from '../../../products.json';
 import { addListener } from './toCart';
 import { checkBtn } from './checkBtn';
+import { countPrice } from './countPrice';
 window.addEventListener('load', create);
 window.addEventListener('hashchange', create);
 
@@ -13,5 +14,6 @@ function create() {
     });
     addListener();
     checkBtn();
+    countPrice();
   }
 }

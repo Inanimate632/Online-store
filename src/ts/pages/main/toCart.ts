@@ -1,5 +1,6 @@
 // import { MainTemplateComponents } from '../../../pages/mainTemplate';
 // import { appRoutes } from '../../routes/app.routes';
+import { countPrice } from './countPrice';
 
 export function addListener() {
   const cardsBtn = document.querySelectorAll('.cards__btn');
@@ -28,4 +29,5 @@ function addToCardt(target: HTMLElement, index: number) {
     const deletedMass = massItems.filter((item) => item !== index + 1);
     localStorage.setItem('basket', JSON.stringify(deletedMass));
   }
+  countPrice();
 }
