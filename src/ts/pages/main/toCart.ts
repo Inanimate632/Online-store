@@ -1,3 +1,6 @@
+// import { MainTemplateComponents } from '../../../pages/mainTemplate';
+// import { appRoutes } from '../../routes/app.routes';
+
 export function addListener() {
   const cardsBtn = document.querySelectorAll('.cards__btn');
   cardsBtn.forEach((btn, index) => {
@@ -23,8 +26,6 @@ function addToCardt(target: HTMLElement, index: number) {
     target.textContent = 'Add to cart';
     const massItems: number[] = JSON.parse(localStorage.getItem('basket') || '[]');
     const deletedMass = massItems.filter((item) => item !== index + 1);
-    console.log(index);
-    console.log(deletedMass);
     localStorage.setItem('basket', JSON.stringify(deletedMass));
   }
 }

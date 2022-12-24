@@ -30,7 +30,7 @@ export function createItems(id: number) {
   buy.classList.add('cards__buy');
   const price = document.createElement('p');
   price.classList.add('cards__price');
-  price.textContent = `$${toPrice(products.products[id].price)}`;
+  price.textContent = `€${toPrice(products.products[id].price)}`;
   buy.append(price);
   const btn = document.createElement('button');
   btn.classList.add('cards__btn');
