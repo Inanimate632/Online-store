@@ -18,3 +18,7 @@ export function switchHash(num: number) {
     window.location.hash = hashMass.join('?');
   }
 }
+
+export function countPercent(num: number, max: number) {
+  return (num * 100) / max;
+}

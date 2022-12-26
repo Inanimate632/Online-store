@@ -3,7 +3,6 @@ import { toPrice } from '../../helpers/helper';
 const massPages: HTMLElement[] = [];
 
 export function createItems(id: number, index: number): void {
-  const product = document.querySelector('.product') as HTMLElement;
   const itemWraper = document.createElement('div');
   itemWraper.classList.add('product__item');
   const numElement = document.createElement('p');
@@ -63,8 +62,5 @@ export function createItems(id: number, index: number): void {
   control.append(sum);
   itemWraper.append(control);
   massPages.push(itemWraper);
-  if (index < 3) {
-    product.append(itemWraper);
-  }
 }
 export default massPages;
