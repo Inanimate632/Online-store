@@ -12,86 +12,185 @@ export const MainTemplateComponents: component = {
               </legend>
               <!--TODO: генерация из json!!! -->
               <div class="fieldset__items fieldset__items_nonactive">
-                <div class="fieldset__item fieldset__item_active">
+                <div class="fieldset__item">
                   <div class="fieldset__wrap">
                     <!--TODO: кастомный чебокс!!! -->
-                    <input id="checkbox1" type="checkbox">
+                    <input id="checkbox1" class="checkbox" type="checkbox">
                     <label class="fieldset__label" for="checkbox1">smartphones</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox2" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox2">laptops</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox3" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox3">fragrances</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox4" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox4">skincare</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox5" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox5">groceries</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox6" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox6">home-decoration</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox7" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox7">furniture</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox8" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox8">tops</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox9" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox9">womens-dresses</label>
                   </div>
                   <div class="fieldset__amout">
-                    (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox10" class="checkbox" type="checkbox">
+                    <label class="fieldset__label0" for="checkbox1">womens-shoes</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox11" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox11">mens-shirts</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox12" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox12">mens-shoes</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox13" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox13">mens-watches</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox14" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox14">womens-watches</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox15" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox15">womens-bags</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox16" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox16">womens-jewellery</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox17" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox17">sunglasses</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox18" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox18">automotive</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox19" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox19">motorcycle</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
+                  </div>
+                </div>
+                <div class="fieldset__item">
+                  <div class="fieldset__wrap">
+                    <input id="checkbox20" class="checkbox" type="checkbox">
+                    <label class="fieldset__label" for="checkbox20">lighting</label>
+                  </div>
+                  <div class="fieldset__amout">
+                    (<span class="fieldset__count">5</span>/<span class="fieldset__count">5</span>)
                   </div>
                 </div>
               </div>
@@ -297,9 +396,9 @@ export const MainTemplateComponents: component = {
               </div>
             </div>
           </div>
-          <div class="cards">
-            
-          </div>
+          <app-cards-wrap>
+            <div class="cards"></div>          
+          </app-cards-wrap>
         </section>
       </article>`,
 };

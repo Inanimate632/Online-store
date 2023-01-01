@@ -1,8 +1,10 @@
 import products from '../../../products.json';
 import { countPercent, toPrice } from '../../helpers/helper';
 
-export function createItems(id: number) {
-  const cards = document.querySelector('.cards') as HTMLElement;
+export function createItems(id: number, card?: HTMLElement) {
+  if (card === undefined) {
+    card = document.querySelector('.cards') as HTMLElement;
+  }
   const item = document.createElement('div');
   item.classList.add('cards__item');
   item.id = `cards__item${id}`;
@@ -29,7 +31,7 @@ export function createItems(id: number) {
   const ratenum = document.createElement('p');
   ratenum.classList.add('cards__ratenum');
   ratenum.textContent = products.products[id].rating.toString();
-  rating.append(ratenum); //TODO append and create Star
+  rating.append(ratenum);
   text.append(rating);
   const buy = document.createElement('div');
   buy.classList.add('cards__buy');
@@ -43,7 +45,7 @@ export function createItems(id: number) {
   buy.append(btn);
   text.append(buy);
   item.append(text);
-  cards.append(item);
+  card.append(item);
 }
 
 function createStar(id: number) {

@@ -17,12 +17,8 @@ export function addRoutes() {
 }
 
 function creteComponent(num: number) {
-  let page = document.querySelector('app-basket-page') as HTMLElement;
-  if (page === null) {
-    page = document.querySelector('app-basket-page1') as HTMLElement;
-  } else {
-    fillSummary(page);
-  }
+  const page = document.querySelector('app-basket-page') as HTMLElement;
+  fillSummary(page);
   const wraper = page.querySelector('app-cart-items') as HTMLElement;
   const pageValue = page.querySelector('.control_page-value') as HTMLElement;
   pageValue.textContent = num.toString();
@@ -33,7 +29,7 @@ function creteComponent(num: number) {
     }
   }
   const obj: component = {
-    selector: `app-basket-page${num}`,
+    selector: `app-basket-page`,
     template: page.innerHTML,
   };
   return obj;

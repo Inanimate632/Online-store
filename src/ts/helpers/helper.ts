@@ -22,3 +22,25 @@ export function switchHash(num: number) {
 export function countPercent(num: number, max: number) {
   return (num * 100) / max;
 }
+
+export function createHash(fillter: string, el: HTMLElement, bool: boolean) {
+  const hash = window.location.hash.slice(1);
+  if (bool) {
+    if (hash !== '') {
+      const a = hash.split('=');
+      a.push(el.textContent || '');
+      a.splice(0, 1);
+      return `?${fillter}=${a.join('%E2%86%95')}` || '';
+    } else {
+      return `?${fillter}=${el.textContent}` || '';
+    }
+  } else {
+    const hashMass = window.location.hash.split('=')[1].split('%E2%86%95');
+    if (hashMass.length <= 1) {
+      return '';
+    } else {
+      const filterMass = hashMass.filter((hash) => hash.toLowerCase() !== el.textContent?.toLowerCase());
+      return `?${fillter}=${filterMass.join('%E2%86%95')}` || '';
+    }
+  }
+}

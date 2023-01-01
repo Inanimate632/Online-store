@@ -15,4 +15,5 @@ export interface routesObj {
 export interface component {
   selector: string;
   template: string;
+  wrap?: HTMLElement;
 }
