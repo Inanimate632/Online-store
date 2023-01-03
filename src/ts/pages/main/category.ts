@@ -1,26 +1,32 @@
 import { createHash } from '../../helpers/helper';
 import { component, routesObj } from '../../Intarface/IntarfaceRoutes';
 import { appRoutes } from '../../routes/app.routes';
+import { createObjCategory } from './categoryHelper';
 import { createItems } from './createItems';
-import products from '../../../products.json';
-let massNum: number[] = [];
 
 export function Categoty() {
+  const Brand: NodeListOf<HTMLInputElement> = document.querySelectorAll('.checkbox-category');
   const categorys: NodeListOf<HTMLInputElement> = document.querySelectorAll('.checkbox');
+  Brand.forEach((el) => {
+    el.addEventListener('click', () => {
+      switchCategoryHash(el, 'Brand');
+    });
+  });
   categorys.forEach((el) => {
     el.addEventListener('click', () => {
-      switchCategoryHash(el);
+      switchCategoryHash(el, 'Category');
     });
   });
 }
 
-function switchCategoryHash(el: HTMLInputElement) {
+function switchCategoryHash(el: HTMLInputElement, blockCategory: string) {
   const div = document.createElement('div') as HTMLElement;
   ((el.parentElement || div).parentElement || div).classList.toggle('fieldset__item_active');
 
   const massCategory: number[] = createObjCategory(
     (el.nextElementSibling as HTMLElement).textContent || '',
-    el.checked
+    el.checked,
+    blockCategory
   );
   createCategory(massCategory, el);
 }
@@ -63,39 +69,4 @@ function createComponentCategory(mass: number[]) {
     wrap: wrapPage,
   };
   return obj;
-}
-
-function createObjCategory(category: string, bool: boolean) {
-  if (bool) {
-    products.products.forEach((item) => {
-      if (item.category === category) {
-        massNum.push(item.id);
-      }
-    });
-  } else {
-    products.products.forEach((item) => {
-      if (item.category === category) {
-        massNum = massNum.filter((num) => num !== item.id);
-      }
-    });
-  }
-  return massNum;
-}
-
-export function checkCategory() {
-  const hash = window.location.hash;
-  const item = document.querySelectorAll('.fieldset__item') as NodeListOf<HTMLElement>;
-  if (hash !== '') {
-    item.forEach((el) => {
-      if (!(el.firstElementChild?.firstElementChild as HTMLInputElement).checked) {
-        (el.lastElementChild?.querySelector('.fieldset__count') as HTMLElement).textContent = '0';
-      } else {
-        (el.lastElementChild?.querySelector('.fieldset__count') as HTMLElement).textContent = '5';
-      }
-    });
-  } else {
-    item.forEach((el) => {
-      (el.lastElementChild?.querySelector('.fieldset__count') as HTMLElement).textContent = '5';
-    });
-  }
 }

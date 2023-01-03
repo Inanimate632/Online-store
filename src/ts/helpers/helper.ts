@@ -24,22 +24,26 @@ export function countPercent(num: number, max: number) {
 }
 
 export function createHash(fillter: string, el: HTMLElement, bool: boolean) {
+  let content = el.textContent || '';
+  if (content.split(' ').length > 1) {
+    content = content.split(' ').join('%20of%20');
+  }
   const hash = window.location.hash.slice(1);
   if (bool) {
     if (hash !== '') {
       const a = hash.split('=');
-      a.push(el.textContent || '');
+      a.push(content || '');
       a.splice(0, 1);
       return `?${fillter}=${a.join('%E2%86%95')}` || '';
     } else {
-      return `?${fillter}=${el.textContent}` || '';
+      return `?${fillter}=${content}` || '';
     }
   } else {
     const hashMass = window.location.hash.split('=')[1].split('%E2%86%95');
     if (hashMass.length <= 1) {
       return '';
     } else {
-      const filterMass = hashMass.filter((hash) => hash.toLowerCase() !== el.textContent?.toLowerCase());
+      const filterMass = hashMass.filter((hash) => hash.toLowerCase() !== content.toLowerCase());
       return `?${fillter}=${filterMass.join('%E2%86%95')}` || '';
     }
   }

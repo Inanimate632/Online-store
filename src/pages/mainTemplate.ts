@@ -201,13 +201,12 @@ export const MainTemplateComponents: component = {
               <legend class="fieldset__title">
                 Brand
               </legend>
-              <!--TODO: генерация из json!!! -->
               <div class="fieldset__items fieldset__items_nonactive">
-                <div class="fieldset__item fieldset__item_active">
+                <div class="fieldset__item">
                   <div class="fieldset__wrap">
                     <!--TODO: кастомный чебокс!!! -->
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox29" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox29">Apple</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -215,8 +214,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox21" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox21">Samsung</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -224,8 +223,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox22" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox22">OPPO</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -233,8 +232,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox23" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox23">Huawei</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -242,8 +241,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox24" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox24">Microsoft Surface</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -251,8 +250,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox25" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox25">Infinix</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -260,8 +259,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox26" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox26">HP Pavilion</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -269,8 +268,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox27" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox27">Impression of Acqua Di Gio</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
@@ -278,8 +277,8 @@ export const MainTemplateComponents: component = {
                 </div>
                 <div class="fieldset__item">
                   <div class="fieldset__wrap">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="fieldset__label" for="checkbox1">smartphones</label>
+                    <input id="checkbox28" class="checkbox-category" type="checkbox">
+                    <label class="fieldset__label" for="checkbox28">Royal_Mirage</label>
                   </div>
                   <div class="fieldset__amout">
                     (<span class="fieldset__count">1</span>/<span class="fieldset__count">5</span>)
