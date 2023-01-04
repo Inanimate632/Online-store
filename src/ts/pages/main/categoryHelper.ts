@@ -1,39 +1,53 @@
 import products from '../../../products.json';
-let massNum: number[] = [];
+let massNumCategoty: number[] = [];
+let massNumBrand: number[] = [];
+let allNumMass: number[] = [];
+let categoryFirstName = '';
 
 export function createObjCategory(category: string, bool: boolean, blockCategory: string) {
+  if (categoryFirstName === '') {
+    categoryFirstName = blockCategory;
+  }
   if (blockCategory === 'Category') {
     if (bool) {
       products.products.forEach((item) => {
         if (item.category === category) {
-          massNum.push(item.id);
+          massNumCategoty.push(item.id);
         }
       });
     } else {
       products.products.forEach((item) => {
         if (item.category === category) {
-          massNum = massNum.filter((num) => num !== item.id);
+          massNumCategoty = massNumCategoty.filter((num) => num !== item.id);
         }
       });
     }
-    return massNum;
   } else if (blockCategory === 'Brand') {
     if (bool) {
       products.products.forEach((item) => {
         if (item.brand === category) {
-          massNum.push(item.id);
+          massNumBrand.push(item.id);
         }
       });
     } else {
       products.products.forEach((item) => {
         if (item.brand === category) {
-          massNum = massNum.filter((num) => num !== item.id);
+          massNumBrand = massNumBrand.filter((num) => num !== item.id);
         }
       });
     }
-    return massNum;
   }
-  return [];
+  if (massNumCategoty.length === 0) {
+    return massNumBrand;
+  } else if (massNumBrand.length === 0) {
+    return massNumCategoty;
+  }
+  allNumMass = massNumCategoty.filter((num) => {
+    if (massNumBrand.includes(num)) {
+      return num;
+    }
+  });
+  return allNumMass;
 }
 
 export function checkCategory() {
