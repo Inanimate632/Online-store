@@ -9,7 +9,7 @@ window.addEventListener('load', create);
 window.addEventListener('hashchange', create);
 window.addEventListener('load', Categoty);
 
-function create() {
+export function create() {
   const hash = window.location.hash;
   if (hash === '') {
     products.products.forEach((item, index) => {
