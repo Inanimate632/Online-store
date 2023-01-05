@@ -2,7 +2,7 @@ import { createItems } from './createItems';
 import products from '../../../products.json';
 import { addListener } from './toCart';
 import { checkBtn } from './checkBtn';
-import { countPrice } from './countPrice';
+import { countPrice, coutnIntems } from './countPrice';
 import { Categoty } from './category';
 import { checkCategory } from './categoryHelper';
 window.addEventListener('load', create);
@@ -20,4 +20,5 @@ export function create() {
   checkBtn();
   countPrice();
   checkCategory();
+  coutnIntems();
 }
