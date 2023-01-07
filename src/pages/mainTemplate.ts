@@ -343,36 +343,13 @@ export const MainTemplateComponents: component = {
             </div>
             <div class="group">
               <div class="sort">
-                <div class="sort__main">
-                  <span class="sort__text">Price low to high</span>
-                  <i class="fa fa-angle-down"></i>
-                </div>
-                <ul class="sort__list">
-                  <li class="sort__item">
-                    <i class="fa fa-check sort__check"></i>
-                    <span class="sort__text">Price low to high</span>
-                  </li>
-                  <li class="sort__item">
-                    <i class="fa fa-check sort__check"></i>
-                    <span class="sort__text">Price high to low</span>
-                  </li>
-                  <li class="sort__item">
-                    <i class="fa fa-check sort__check"></i>
-                    <span class="sort__text">Lowest rating</span>
-                  </li>
-                  <li class="sort__item">
-                    <i class="fa fa-check sort__check"></i>
-                    <span class="sort__text">Highest rating</span>
-                  </li>
-                  <li class="sort__item">
-                    <i class="fa fa-check sort__check"></i>
-                    <span class="sort__text">Minimum discount</span>
-                  </li>
-                  <li class="sort__item">
-                    <i class="fa fa-check sort__check"></i>
-                    <span class="sort__text">Maximum discount</span>
-                  </li>
-                </ul>
+                <select name="pets" id="pet-select" class="sort__main">
+                  <option class="sort__item" value="sort-title" disabled="disabled">Sort Options:</option>
+                  <option class="sort__item" value="price-ASC">Price low to high</option>
+                  <option class="sort__item" value="price-DESC">Price high to low</option>
+                  <option class="sort__item" value="rating-ASC">Lowest rating</option>
+                  <option class="sort__item" value="rating-DESC">Higher rating</option>
+                </select>
               </div>
               <div class="view">
                 <div class="view__mode view__mode_triple">

@@ -38,16 +38,16 @@ export function createObjCategory(category: string, bool: boolean, blockCategory
     }
   }
   if (massNumCategoty.length === 0) {
-    return massNumBrand;
+    return massNumBrand.sort();
   } else if (massNumBrand.length === 0) {
-    return massNumCategoty;
+    return massNumCategoty.sort();
   }
   allNumMass = massNumCategoty.filter((num) => {
     if (massNumBrand.includes(num)) {
       return num;
     }
   });
-  return allNumMass;
+  return allNumMass.sort();
 }
 
 export function checkCategory() {

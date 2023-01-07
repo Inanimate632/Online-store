@@ -3,6 +3,7 @@ import { component, routesObj } from '../../Intarface/IntarfaceRoutes';
 import { appRoutes } from '../../routes/app.routes';
 import { createObjCategory } from './categoryHelper';
 import { createItems } from './createItems';
+import { sortCards } from './sort';
 
 export function Categoty() {
   const Brand: NodeListOf<HTMLInputElement> = document.querySelectorAll('.checkbox-category');
@@ -28,17 +29,17 @@ function switchCategoryHash(el: HTMLInputElement, blockCategory: string) {
     el.checked,
     blockCategory
   );
-  createCategory(massCategory, el);
+  const hash = createHash('category', (el.nextElementSibling as HTMLElement).textContent, el.checked);
+  createCategory(massCategory, hash);
 }
 
-function createCategory(mass: number[], el: HTMLInputElement) {
-  const hash = createHash('category', el.nextElementSibling as HTMLElement, el.checked);
+export function createCategory(mass: number[], hash: string, bool?: boolean) {
   const PathMass: string[] = [];
   appRoutes.forEach((value) => {
     PathMass.push(value.path);
   });
   const obj: routesObj = {
-    component: createComponentCategory(mass),
+    component: createComponentCategory(mass, bool),
     path: hash,
   };
   if (!PathMass.includes(hash)) {
@@ -55,7 +56,19 @@ function createCategory(mass: number[], el: HTMLInputElement) {
   window.location.hash = hash;
 }
 
-function createComponentCategory(mass: number[]) {
+function createComponentCategory(mass: number[], bool?: boolean) {
+  const hashMass = window.location.hash.slice(1).split('=');
+  if (bool !== false) {
+    if (hashMass.length === 2) {
+      if (hashMass[0] === '?sort') {
+        mass = sortCards(hashMass[1], mass);
+      }
+    } else if (hashMass.length > 2) {
+      if (hashMass[1].split('&')[1] === '?sort') {
+        mass = sortCards(hashMass[2], mass);
+      }
+    }
+  }
   const page = (document.querySelector('app-cards-wrap') as HTMLElement).cloneNode(true) as HTMLElement;
   const wrapPage = document.querySelector('app-cards-wrap') as HTMLElement;
   const card = page.querySelector('.cards') as HTMLElement;
