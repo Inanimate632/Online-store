@@ -14,6 +14,7 @@ function take() {
 
 function switchPage(btnContent: string) {
   const pageNum = document.querySelector('.control_page-value') as HTMLElement;
+  console.log(pageNum.textContent);
   const num: string = pageNum.textContent || '0';
   let a: number = parseInt(num);
   if (btnContent === ' > ' && a * 3 < massPages.length) {

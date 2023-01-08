@@ -13,6 +13,7 @@ export function addRoutes() {
     a++;
     appRoutes.push(obj);
   }
+  console.log(appRoutes);
   appRoutes[0].component = creteComponent(1);
 }
 
