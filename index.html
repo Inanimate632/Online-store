@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online store</title>
+  <!-- OG Tags -->
+  <meta property="og:title" content="Online store">
+  <meta property="og:description" content="Buy at home | Online store">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="dc5d4cecf28497f9c892.png">
+  <meta property="og:site_name" content="Online store">
+  <!-- Favicon -->
+  <link rel="icon" href="dc5d4cecf28497f9c892.png" type="image/png">
+  <link rel="shortcut icon" href="dc5d4cecf28497f9c892.png" type="image/png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- Favicon -->
+  <script src="https://kit.fontawesome.com/73b529f8f2.js" crossorigin="anonymous"></script>
+<script defer src="index.js"></script><link href="main.css" rel="stylesheet"></head>
+
+<body class="body">
+  <header class="header" id="header-section">
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="./index.html">
+          <img class="logo__img" src="dc5d4cecf28497f9c892.png" alt="Online store logo">
+          <h1 class="logo__text">Online<br>store
+          </h1>
+        </a>
+        <div class="search">
+          <i class="fa fa-search search__icon"></i>
+          <input class="search__input" type="text" name="search" placeholder="Search">
+          <!-- TODO: Должен появляется как только начинается вводится строка!!! -->
+          <i class="fa fa-times search__icon-close"></i>
+        </div>
+        <div class="cart">
+          <!-- TODO: Должен появляется как только появляется товар в корзине!!! -->
+          <span class="cart__sum">$5678</span>
+          <span class="cart__count"></span>
+          <a href="#basket" class="fa fa-shopping-cart cart__icon basket-icon"></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main" id="main-section">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer class="footer" id="footer-section">
+    <div class="container">
+      <div class="credits">
+        <div class="copyright">
+          <span class="copyright__year">
+            © 2022 Created by
+          </span>
+          <a class="copyright__name" href="https://github.com/inanimate631">
+            inanimate
+          </a>
+          <span>
+            &
+          </span>
+          <a class="copyright__name" href="https://github.com/dpitalenko">
+            dpitalenko
+          </a>
+        </div>
+        <a href="https://rs.school/js/">
+          <img class="credits__rss" src="https://rs.school/images/rs_school_js.svg" width="100px" alt="RSSchool">
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
