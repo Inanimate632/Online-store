@@ -14,3 +14,11 @@ export function countPrice() {
     sumWraper.textContent = `€${toPrice(sum)}`;
   }
 }
+
+export function coutnIntems() {
+  const numItems = document.querySelector('.found__cards') as HTMLElement;
+  if (numItems !== null) {
+    const cards = document.querySelectorAll('.cards__item');
+    numItems.textContent = `${cards.length} items`;
+  }
+}

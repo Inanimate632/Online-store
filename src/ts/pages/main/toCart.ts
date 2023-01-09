@@ -1,5 +1,3 @@
-// import { MainTemplateComponents } from '../../../pages/mainTemplate';
-// import { appRoutes } from '../../routes/app.routes';
 import { countPrice } from './countPrice';
 
 export function addListener() {
