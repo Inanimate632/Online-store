@@ -12,7 +12,7 @@ function countTotal(): number {
   let sum = 0;
   massPages.forEach((el) => {
     const price = el.querySelector('.item__control-sum') as HTMLElement;
-    const priceNumber: string[] = price.textContent?.split('').filter((el) => Number(el)) || [];
+    const priceNumber: string[] = (price.textContent as string).split('').filter((el) => Number(el));
     sum += Number(priceNumber.join(''));
   });
   return sum;

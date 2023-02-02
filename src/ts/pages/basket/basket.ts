@@ -6,9 +6,8 @@ window.addEventListener('load', checkHashLoad);
 const hashLoad = window.location.hash;
 
 function create() {
-  let arrayProduct: number[] = JSON.parse(localStorage.getItem('basket') || '[]');
+  let arrayProduct: number[] = JSON.parse(localStorage.getItem('basket') as string);
   const hash = window.location.hash;
-  console.log(hash);
   if (hash === '#basket') {
     arrayProduct = arrayProduct.map((num) => num - 1);
     arrayProduct.forEach((item, index) => {

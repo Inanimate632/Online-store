@@ -24,36 +24,36 @@ function loadCareateComponents(doc: component, hash: string) {
 }
 
 function createTemplate(template: string, hash: string) {
-  const hashMass = hash.slice(1).split('=')[1].split('%E2%86%95');
-  hashMass[hashMass.length - 1] = hashMass[hashMass.length - 1].split('&')[0];
+  const arrayHash = hash.slice(1).split('=')[1].split('%E2%86%95');
+  arrayHash[arrayHash.length - 1] = arrayHash[arrayHash.length - 1].split('&')[0];
   const div = document.createElement('div');
   div.innerHTML = template;
   const label = div.querySelectorAll('.fieldset__label');
-  let massCategory: number[] = [];
+  let arrayCategory: number[] = [];
   label.forEach((category) => {
-    if (hashMass.includes(category.textContent || '')) {
-      massCategory = createObjCategory(
-        category.textContent || '',
+    if (arrayHash.includes(category.textContent as string)) {
+      arrayCategory = createObjCategory(
+        category.textContent as string,
         true,
-        category.parentElement?.parentElement?.parentElement?.previousElementSibling?.textContent?.trim() || ''
+        (category.parentElement?.parentElement?.parentElement?.previousElementSibling?.textContent as string).trim()
       );
       (category.previousElementSibling as HTMLInputElement).setAttribute('checked', 'checked');
     }
   });
-  if (massCategory.length === 0) {
+  if (arrayCategory.length === 0) {
     products.products.forEach((item, index) => {
-      massCategory.push(index + 1);
+      arrayCategory.push(index + 1);
     });
   }
   if (hash.slice(1).split('=')[0] === 'sort') {
-    massCategory = sortCards(hash.slice(1).split('=')[1], massCategory);
+    arrayCategory = sortCards(hash.slice(1).split('=')[1], arrayCategory);
   } else if (hash.split('&')[1] !== undefined) {
     if (hash.split('&')[1].slice(1).split('=')[0] === 'sort') {
-      massCategory = sortCards(hash.split('&')[1].slice(1).split('=')[1], massCategory);
+      arrayCategory = sortCards(hash.split('&')[1].slice(1).split('=')[1], arrayCategory);
     }
   }
   const card = div.querySelector('.cards') as HTMLElement;
-  massCategory.forEach((num) => {
+  arrayCategory.forEach((num) => {
     createItems(num - 1, card);
   });
   return div.innerHTML;

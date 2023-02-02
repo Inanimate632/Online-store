@@ -4,11 +4,12 @@ import { appRoutes } from '../../routes/app.routes';
 import { createObjCategory } from './categoryHelper';
 import { createItems } from './createItems';
 import { sortCards } from './sort';
+const NUMBER_OF_DIFFERENT_CATEGORY = 2;
 
 export function Categoty() {
-  const Brand: NodeListOf<HTMLInputElement> = document.querySelectorAll('.checkbox-category');
+  const brand: NodeListOf<HTMLInputElement> = document.querySelectorAll('.checkbox-category');
   const categorys: NodeListOf<HTMLInputElement> = document.querySelectorAll('.checkbox');
-  Brand.forEach((el) => {
+  brand.forEach((el) => {
     el.addEventListener('click', () => {
       switchCategoryHash(el, 'Brand');
     });
@@ -24,48 +25,48 @@ function switchCategoryHash(el: HTMLInputElement, blockCategory: string) {
   const div = document.createElement('div') as HTMLElement;
   ((el.parentElement || div).parentElement || div).classList.toggle('fieldset__item_active');
 
-  const massCategory: number[] = createObjCategory(
+  const arrayCategory: number[] = createObjCategory(
     (el.nextElementSibling as HTMLElement).textContent || '',
     el.checked,
     blockCategory
   );
-  const hash = createHash('category', (el.nextElementSibling as HTMLElement).textContent, el.checked);
-  createCategory(massCategory, hash);
+  const hash = createHash('category', (el.nextElementSibling as HTMLElement).textContent as string, el.checked);
+  createCategory(arrayCategory, hash);
 }
 
-export function createCategory(mass: number[], hash: string, bool?: boolean) {
+export function createCategory(array: number[], hash: string, bool?: boolean) {
   const PathMass: string[] = [];
   appRoutes.forEach((value) => {
     PathMass.push(value.path);
   });
   const obj: routesObj = {
-    component: createComponentCategory(mass, bool),
+    component: createComponentCategory(array, bool),
     path: hash,
   };
   if (!PathMass.includes(hash)) {
     appRoutes.push(obj);
   } else {
-    let ind = 0;
+    let indexCategory = 0;
     appRoutes.forEach((value, index) => {
       if (value.path === obj.path) {
-        ind = index;
+        indexCategory = index;
       }
     });
-    appRoutes[ind] = obj;
+    appRoutes[indexCategory] = obj;
   }
   window.location.hash = hash;
 }
 
-function createComponentCategory(mass: number[], bool?: boolean) {
+function createComponentCategory(array: number[], bool?: boolean) {
   const hashMass = window.location.hash.slice(1).split('=');
   if (bool !== false) {
-    if (hashMass.length === 2) {
+    if (hashMass.length === NUMBER_OF_DIFFERENT_CATEGORY) {
       if (hashMass[0] === '?sort') {
-        mass = sortCards(hashMass[1], mass);
+        array = sortCards(hashMass[1], array);
       }
-    } else if (hashMass.length > 2) {
+    } else if (hashMass.length > NUMBER_OF_DIFFERENT_CATEGORY) {
       if (hashMass[1].split('&')[1] === '?sort') {
-        mass = sortCards(hashMass[2], mass);
+        array = sortCards(hashMass[2], array);
       }
     }
   }
@@ -73,7 +74,7 @@ function createComponentCategory(mass: number[], bool?: boolean) {
   const wrapPage = document.querySelector('app-cards-wrap') as HTMLElement;
   const card = page.querySelector('.cards') as HTMLElement;
   card.innerHTML = '';
-  mass.forEach((num) => {
+  array.forEach((num) => {
     createItems(num - 1, card);
   });
   const obj: component = {

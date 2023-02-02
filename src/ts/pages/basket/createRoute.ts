@@ -1,11 +1,12 @@
-import massPages from './createItems';
+import arrayPages from './createItems';
 import { component, routesObj } from '../../Intarface/IntarfaceRoutes';
 import { appRoutes } from '../../routes/app.routes';
 import { fillSummary } from './getSummary';
+export const MAX_COMPONENT_ON_BASKET = 3;
 
 export function addRoutes() {
   let a = 1;
-  for (let i = 0; i < massPages.length; i = i + 3) {
+  for (let i = 0; i < arrayPages.length; i = i + 3) {
     const obj: routesObj = {
       component: creteComponent(a),
       path: `basket?pages=${a}`,
@@ -13,7 +14,6 @@ export function addRoutes() {
     a++;
     appRoutes.push(obj);
   }
-  console.log(appRoutes);
   appRoutes[0].component = creteComponent(1);
 }
 
@@ -24,9 +24,9 @@ function creteComponent(num: number) {
   const pageValue = page.querySelector('.control_page-value') as HTMLElement;
   pageValue.textContent = num.toString();
   wraper.innerHTML = '';
-  for (let i = (num - 1) * 3; i < num * 3; i++) {
-    if (massPages[i] !== undefined) {
-      wraper.append(massPages[i]);
+  for (let i = (num - 1) * MAX_COMPONENT_ON_BASKET; i < num * MAX_COMPONENT_ON_BASKET; i++) {
+    if (arrayPages[i]) {
+      wraper.append(arrayPages[i]);
     }
   }
   const obj: component = {

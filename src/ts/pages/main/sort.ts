@@ -30,8 +30,8 @@ export function sort() {
 function switchSort() {
   const sort = document.querySelector('.sort__main') as HTMLSelectElement;
   const hash = createHash('sort', sort.options[sort.selectedIndex].value, true);
-  const sortMass = sortCards(sort.options[sort.selectedIndex].value);
-  createCategory(sortMass, hash, false);
+  const arraySort = sortCards(sort.options[sort.selectedIndex].value);
+  createCategory(arraySort, hash, false);
 }
 
 export function sortCards(sortName: string, massNumber?: number[]) {

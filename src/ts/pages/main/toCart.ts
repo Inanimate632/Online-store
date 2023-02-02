@@ -11,20 +11,20 @@ export function addListener() {
 }
 
 function addToCardt(target: HTMLElement, index: number) {
-  if (target.textContent?.trim() === 'Add to cart') {
+  if ((target.textContent as string).trim() === 'Add to cart') {
     target.textContent = 'Drop from cart';
-    let massItems;
+    let arrayItems;
     if (localStorage.getItem('basket') !== null) {
-      massItems = JSON.parse(localStorage.getItem('basket') || '[]');
+      arrayItems = JSON.parse(localStorage.getItem('basket') || '[]');
     } else {
-      massItems = [];
+      arrayItems = [];
     }
-    massItems.push(index + 1);
-    localStorage.setItem('basket', JSON.stringify(massItems));
+    arrayItems.push(index + 1);
+    localStorage.setItem('basket', JSON.stringify(arrayItems));
   } else {
     target.textContent = 'Add to cart';
-    const massItems: number[] = JSON.parse(localStorage.getItem('basket') || '[]');
-    const deletedMass = massItems.filter((item) => item !== index + 1);
+    const arrayItems: number[] = JSON.parse(localStorage.getItem('basket') || '[]');
+    const deletedMass = arrayItems.filter((item) => item !== index + 1);
     localStorage.setItem('basket', JSON.stringify(deletedMass));
   }
   countPrice();

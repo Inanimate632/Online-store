@@ -1,6 +1,6 @@
 import products from '../../../products.json';
-let massNumCategoty: number[] = [];
-let massNumBrand: number[] = [];
+let arrayNumCategoty: number[] = [];
+let arrayNumBrand: number[] = [];
 let allNumMass: number[] = [];
 let categoryFirstName = '';
 
@@ -12,13 +12,13 @@ export function createObjCategory(category: string, bool: boolean, blockCategory
     if (bool) {
       products.products.forEach((item) => {
         if (item.category === category) {
-          massNumCategoty.push(item.id);
+          arrayNumCategoty.push(item.id);
         }
       });
     } else {
       products.products.forEach((item) => {
         if (item.category === category) {
-          massNumCategoty = massNumCategoty.filter((num) => num !== item.id);
+          arrayNumCategoty = arrayNumCategoty.filter((num) => num !== item.id);
         }
       });
     }
@@ -26,24 +26,24 @@ export function createObjCategory(category: string, bool: boolean, blockCategory
     if (bool) {
       products.products.forEach((item) => {
         if (item.brand === category) {
-          massNumBrand.push(item.id);
+          arrayNumBrand.push(item.id);
         }
       });
     } else {
       products.products.forEach((item) => {
         if (item.brand === category) {
-          massNumBrand = massNumBrand.filter((num) => num !== item.id);
+          arrayNumBrand = arrayNumBrand.filter((num) => num !== item.id);
         }
       });
     }
   }
-  if (massNumCategoty.length === 0) {
-    return massNumBrand.sort();
-  } else if (massNumBrand.length === 0) {
-    return massNumCategoty.sort();
+  if (arrayNumCategoty.length === 0) {
+    return arrayNumBrand.sort();
+  } else if (arrayNumBrand.length === 0) {
+    return arrayNumCategoty.sort();
   }
-  allNumMass = massNumCategoty.filter((num) => {
-    if (massNumBrand.includes(num)) {
+  allNumMass = arrayNumCategoty.filter((num) => {
+    if (arrayNumBrand.includes(num)) {
       return num;
     }
   });
@@ -70,14 +70,14 @@ export function checkCategory() {
   }
 }
 
-function countElement(nameCategory: HTMLElement | null | undefined) {
+function countElement(nameCategory: HTMLElement) {
   let counter = 0;
   const items = document.querySelectorAll('.cards__item');
   items.forEach((item) => {
-    if (products.products[+item.id.slice(11)].category === nameCategory?.textContent) {
+    if (products.products[+item.id.slice(11)].category === nameCategory.textContent) {
       counter++;
     }
-    if (products.products[+item.id.slice(11)].brand === nameCategory?.textContent) {
+    if (products.products[+item.id.slice(11)].brand === nameCategory.textContent) {
       counter++;
     }
   });

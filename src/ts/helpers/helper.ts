@@ -1,6 +1,9 @@
+const NUMBER_IN_THOUSAND = 3;
+const MAXIMUM_INTEREST = 100;
+
 export function toPrice(num: number) {
   const price = num.toString();
-  if (price.length > 3) {
+  if (price.length > NUMBER_IN_THOUSAND) {
     const thousands = price.slice(0, -3);
     return `${thousands},${price.slice(thousands.length, price.length - thousands.length + 1)}.00`;
   }
@@ -20,11 +23,11 @@ export function switchHash(num: number) {
 }
 
 export function countPercent(num: number, max: number) {
-  return (num * 100) / max;
+  return (num * MAXIMUM_INTEREST) / max;
 }
 
-export function createHash(fillter: string, el: string | null, bool: boolean) {
-  let content = el || '';
+export function createHash(fillter: string, el: string, bool: boolean) {
+  let content = el;
   if (content.split(' ').length > 1) {
     content = content.split(' ').join('%20of%20');
   }
@@ -32,25 +35,25 @@ export function createHash(fillter: string, el: string | null, bool: boolean) {
   if (bool) {
     if (hash !== '') {
       const a = hash.split('=');
-      const massCategory: string[] = [];
+      const arrayCategory: string[] = [];
       const sortCategory: string[] = [];
       a.forEach((value, index) => {
         if (value === '?category') {
-          massCategory.push(value);
-          massCategory.push(a[index + 1]);
+          arrayCategory.push(value);
+          arrayCategory.push(a[index + 1]);
         } else if (value === '?sort' || value.split('&')[1] === '?sort') {
           sortCategory.push('?sort');
           sortCategory.push(a[index + 1]);
         }
       });
-      if (sortCategory.length > 0 && massCategory.length > 0) {
-        massCategory[1] = massCategory[1].split('&')[0];
+      if (sortCategory.length > 0 && arrayCategory.length > 0) {
+        arrayCategory[1] = arrayCategory[1].split('&')[0];
       }
-      if (fillter === 'category' && massCategory.length > 0) {
-        massCategory[1] = `${massCategory[1]}%E2%86%95${content}`;
-      } else if (fillter === 'category' && massCategory.length === 0) {
-        massCategory.push('?category');
-        massCategory.push(content);
+      if (fillter === 'category' && arrayCategory.length > 0) {
+        arrayCategory[1] = `${arrayCategory[1]}%E2%86%95${content}`;
+      } else if (fillter === 'category' && arrayCategory.length === 0) {
+        arrayCategory.push('?category');
+        arrayCategory.push(content);
       } else if (fillter === 'sort' && sortCategory.length > 0) {
         sortCategory[1] = content;
       } else if (fillter === 'sort' && sortCategory.length === 0) {
@@ -60,23 +63,23 @@ export function createHash(fillter: string, el: string | null, bool: boolean) {
       if (content === 'sort-title') {
         sortCategory.splice(0, sortCategory.length);
       }
-      if (massCategory.length === 0) {
+      if (arrayCategory.length === 0) {
         return `${sortCategory.join('=')}`;
-      } else if (massCategory.length > 0 && sortCategory.length > 0) {
-        return `${massCategory.join('=')}&${sortCategory.join('=')}`;
+      } else if (arrayCategory.length > 0 && sortCategory.length > 0) {
+        return `${arrayCategory.join('=')}&${sortCategory.join('=')}`;
       } else {
-        return `${massCategory.join('=')}`;
+        return `${arrayCategory.join('=')}`;
       }
     } else {
       return `?${fillter}=${content}` || '';
     }
   } else {
     const hash = window.location.hash.split('=');
-    const hashMass = window.location.hash.split('=')[1].split('%E2%86%95');
-    if (hashMass.length <= 1) {
+    const arrayhash = window.location.hash.split('=')[1].split('%E2%86%95');
+    if (arrayhash.length <= 1) {
       return '';
     } else {
-      const filterMass = hashMass.filter((hash) => hash.toLowerCase() !== content.toLowerCase());
+      const filterMass = arrayhash.filter((hash) => hash.toLowerCase() !== content.toLowerCase());
       hash[1] = filterMass.join('%E2%86%95');
       return hash.join('=').slice(1);
     }

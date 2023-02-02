@@ -1,6 +1,6 @@
 import products from '../../../products.json';
 import { toPrice } from '../../helpers/helper';
-const massPages: HTMLElement[] = [];
+const arrayPages: HTMLElement[] = [];
 
 export function createItems(id: number, index: number): void {
   const itemWraper = document.createElement('div');
@@ -61,6 +61,6 @@ export function createItems(id: number, index: number): void {
   sum.textContent = `€${toPrice(products.products[id].price)}`;
   control.append(sum);
   itemWraper.append(control);
-  massPages.push(itemWraper);
+  arrayPages.push(itemWraper);
 }
-export default massPages;
+export default arrayPages;
