@@ -1,0 +1,31 @@
+@import "../base/typography";
+@import "../abstracts/mixins";
+
+%btn {
+  padding: 5px 0;
+  width: 100px;
+  font-family: $font-logo;
+  font-size: 20px;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  @include transition(0.5s);
+
+  &:hover {
+    @include transition(0.5s);
+  }
+
+  &:active {
+    @include transition(0s);
+  }
+}
+
+
+/*
+
+FOR CARD BUTTONS
+  
+
+
+*/

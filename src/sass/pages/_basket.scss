@@ -1,0 +1,149 @@
+@import "../components/buttons";
+@import "../abstracts/mixins";
+@import "../base/typography";
+
+.basket {
+  margin-top: 30px;
+  min-height: 74.5vh;
+  @include flex(flex, flex-start, flex-start);
+  gap: 4rem;
+}
+
+.product {
+  width: 67%;
+  border: 3px solid $color-sky;
+  border-radius: 15px;
+}
+
+.product__control {
+  @include flex(flex, flex-start, center);
+  gap: 3rem;
+  background-color: $color-lightsky;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product__control-title {
+  padding-right: 350px;
+  padding-left: 15px;
+}
+
+.product__control_items,
+.product__control_page {
+  @include flex(flex, center, center);
+  gap: 5px;
+}
+
+.sum {
+  border: 3px solid $color-sky;
+  border-radius: 15px;
+  width: 29%;
+}
+
+.sum-title {
+  text-align: center;
+  background-color: $color-lightsky;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 130%;
+  border-bottom: 3px solid $color-sky;
+}
+
+.sum__products,
+.sum__price {
+  @include flex(flex, center, center);
+  margin: 15px auto 0 auto;
+  gap: 0.2rem;
+}
+
+.products-title,
+.products-amount,
+.price-title,
+.price-amount {
+  font-size: 130%;
+}
+
+.promo__wraper {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  @include flex(flex, center, center);
+}
+
+.promo {
+  width: 70%;
+  height: 25px;
+  border: 2px solid $color-sky;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.promo-test {
+  text-align: center;
+  font-size: 80%;
+}
+
+.buy {
+  @extend %btn;
+  display: block;
+  margin: 15px auto 15px auto;
+  border-color: $color-sky;
+}
+
+.product__item {
+  border-top: 3px solid $color-sky;
+  @include flex(flex, flex-start, center);
+  height: 6rem;
+}
+
+.product__item-number {
+  margin-left: 15px;
+  border: 3px solid $color-sky;
+  border-radius: 50%;
+  width: 25px;
+  text-align: center;
+}
+
+.product__item-img {
+  width: 20%;
+  height: 80%;
+  object-fit: cover;
+  margin: 5px 15px;
+  border: 3px solid $color-sky;
+  border-radius: 15px;
+}
+
+.product__item_info{
+  width: 50%;
+}
+
+.item__info-title{
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 2px solid $color-gray;
+}
+
+.item__info_other{
+  @include flex(flex, space-around, center);
+}
+
+.item__info-description{
+  text-align: center;
+  padding: 5px 0;
+}
+
+.info__other-rating, .info__other-discount, .item__info-description{
+  font-size: 80%;
+}
+
+.product__item_control{
+  @include flex(flex, center, center);
+  flex-direction: column;
+  margin-left: 15px;
+  width: 20%;
+  gap: 0.5rem;
+}
+
+.item__control_panel{
+  @include flex(flex, center, center);
+  gap: 0.5rem;
+}

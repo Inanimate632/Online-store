@@ -1,0 +1,18 @@
+@import "./sass/base/reset";
+@import "./sass/base/typography";
+@import "./sass/layout/header";
+@import "./sass/layout/footer";
+@import "./sass/sections/filters";
+@import "./sass/sections/parameters";
+@import "./sass/sections/products";
+@import "./sass/pages/basket";
+
+.body {
+  font-family: $font-main;
+  font-size: 16px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1222px;;
+}

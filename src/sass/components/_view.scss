@@ -1,0 +1,10 @@
+@import "../base/typography";
+
+%view-item {
+  margin: 1px;
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: $color-gray;
+  border-radius: 100px;
+}
